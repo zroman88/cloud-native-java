@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductService {
 
-	@RequestMapping("/product/{id}")
-	Product getProduct(@PathVariable("id") int id) {
-		return new Product(id);
-	}
+    @RequestMapping("/${env}/product/{id}")
+    Product getProduct(@PathVariable("id") int id) {
+        return new Product(id);
+    }
 
-	@RequestMapping("/productIds")
-	List<Integer> getProductIds(@RequestParam("id") int id) {
-		return Arrays.asList(id + 1, id + 2, id + 3);
-	}
+    @RequestMapping("/${env}/productIds")
+    List<Integer> getProductIds(@RequestParam("id") int id) {
+        return Arrays.asList(id + 1, id + 2, id + 3);
+    }
 }

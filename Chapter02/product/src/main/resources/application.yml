@@ -4,4 +4,9 @@ server:
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 5
-
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+management:
+  security:
+    enabled: false

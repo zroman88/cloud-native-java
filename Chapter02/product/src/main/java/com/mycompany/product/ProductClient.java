@@ -10,19 +10,17 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ProductClient {
 
-	@Autowired
-	private RestTemplate rTemplate ;
-	
-	@Value("${env}")
-	private String env ; 
-	
-	@RequestMapping("/client/{id}")
-	Product getProduct(@PathVariable("id") int id) {
-		
-		Product product = rTemplate.getForObject(
-				"http://PRODUCT/" + env +"/product/" + id, 
-				Product.class);
-		return product ;
-	}
+    @Autowired
+    private RestTemplate rTemplate;
+
+    @Value("${env}")
+    private String env;
+
+    @RequestMapping("/client/{id}")
+    Product getProduct(@PathVariable("id") int id) {
+
+        Product product = rTemplate.getForObject("http://PRODUCT/" + env + "/product/" + id, Product.class);
+        return product;
+    }
 
 }
