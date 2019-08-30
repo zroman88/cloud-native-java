@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8085
 
 eureka:
   instance:
@@ -16,3 +16,10 @@ spring:
   data:
     mongodb:
       database: masterdb
+  activemq:
+    broker-url: tcp://localhost:61616
+  jms:
+    pub-sub-domain: true
+
+jms:
+  ProductTopic: ProductT

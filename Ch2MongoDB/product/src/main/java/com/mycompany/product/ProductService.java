@@ -6,6 +6,7 @@ import java.util.List;
 import com.mycompany.product.dao.ProductRepository;
 import com.mycompany.product.entity.Product;
 import com.mycompany.product.exceptions.BadRequestException;
+import com.mycompany.product.msg.ProductMsgProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,9 @@ public class ProductService {
 
     @Autowired
     ProductRepository prodRepo;
+
+    @Autowired
+    ProductMsgProducer msgProducer;
 
     @GetMapping("/${env}/product/{id}")
     Product getProduct(@PathVariable("id") String id) {
@@ -30,6 +34,8 @@ public class ProductService {
     @PostMapping("/${env}/product")
     ResponseEntity<Product> insertProduct(@RequestBody Product product) {
         Product savedProduct = prodRepo.save(product);
+        msgProducer.sendUpdate(savedProduct, false);
+
         return new ResponseEntity<Product>(savedProduct, HttpStatus.OK);
     }
 
@@ -42,7 +48,7 @@ public class ProductService {
         existingProduct.setCatId(product.getCatId());
         existingProduct.setName(product.getName());
         Product savedProduct = prodRepo.save(existingProduct);
-
+        msgProducer.sendUpdate(existingProduct,false);
         // Return the updated product
         return new ResponseEntity<Product>(savedProduct, HttpStatus.OK);
     }
@@ -57,6 +63,8 @@ public class ProductService {
         }
 
         prodRepo.delete(existingProduct);
+        msgProducer.sendUpdate(existingProduct, true);
+
         return existingProduct;
     }
 }

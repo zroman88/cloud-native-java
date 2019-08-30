@@ -7,9 +7,6 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
-#management:
-#  security:
-#    enabled: false
 logging:
   level: debug
 spring:
@@ -19,3 +16,10 @@ spring:
         enabled: true
       cluster-name: elasticsearch
       cluster-nodes: localhost:9300
+  activemq:
+    broker-url: tcp://localhost:61616
+  jms:
+    pub-sub-domain: true
+
+jms:
+  ProductTopic: ProductT
