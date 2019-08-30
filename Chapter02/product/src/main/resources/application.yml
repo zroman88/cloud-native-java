@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 eureka:
   instance:
@@ -10,3 +10,8 @@ eureka:
 management:
   security:
     enabled: false
+logging:
+  level: debug
+spring:
+  jpa:
+    show-sql: true

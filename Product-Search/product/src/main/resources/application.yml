@@ -1,0 +1,21 @@
+server:
+  port: 8086
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+#management:
+#  security:
+#    enabled: false
+logging:
+  level: debug
+spring:
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-name: elasticsearch
+      cluster-nodes: localhost:9300

@@ -1,10 +1,20 @@
-package com.mycompany.product;
+package com.mycompany.product.entity;
 
-public class Product {
+import javax.persistence.*;
+import java.io.Serializable;
 
+@Entity
+public class Product implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id = 1;
-	private String name = "Oranges ";
-	private int catId = 2;
+
+	@Column(nullable = false)
+	private String name;
+
+	@Column(nullable = false)
+	private int catId;
 
 	public Product() {
 		
