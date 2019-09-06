@@ -2,8 +2,5 @@ server:
   port: 8888
 
 spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: file:../..
+  profiles:
+    active: native
