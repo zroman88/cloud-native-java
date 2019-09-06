@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="spring_boot_com.mycompany.infra.configsvr.ConfigServiceApplication" profiles="native" autodetected="true" />
+        <fileset id="spring_boot_com.mycompany.infra.configsvr.ConfigServiceApplication" profiles="git" autodetected="true" />
       </configuration>
     </facet>
     <facet type="web" name="Web">
