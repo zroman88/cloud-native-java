@@ -1,3 +1,10 @@
 spring:
   application:
     name: product
+  profiles: docker
+  eureka:
+    instance:
+      preferIpAddress: true
+    client:
+      serviceUrl:
+        defaultZone: http://eureka:8761/eureka/
