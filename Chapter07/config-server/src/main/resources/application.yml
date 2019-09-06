@@ -1,16 +1,16 @@
 server:
   port: 8888
-#spring:
-#  cloud:
-#    config:
-#      server:
-#        git:
-#          uri: file:C:/Users/roman.zeylikovich/IdeaProjects/Cloud-Native-Applications-in-Java/Chapter07
 spring:
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: C:/Users/roman.zeylikovich/IdeaProjects/Cloud-Native-Applications-in-Java/Chapter07
+        git:
+          uri: file:../file:/C:/Users/roman.zeylikovich/IdeaProjects/Cloud-Native-Applications-in-Java/
+#spring:
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: C:/Users/roman.zeylikovich/IdeaProjects/Cloud-Native-Applications-in-Java/Chapter07
