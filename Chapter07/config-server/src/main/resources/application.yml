@@ -4,3 +4,8 @@ server:
 spring:
   profiles:
     active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: C:/Users/roman.zeylikovich/IdeaProjects/Cloud-Native-Applications-in-Java/Chapter07
