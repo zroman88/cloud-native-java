@@ -1,0 +1,17 @@
+server:
+  port: 8084
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+management:
+  security:
+    enabled: false
+logging:
+  level: debug
+spring:
+  jpa:
+    show-sql: true

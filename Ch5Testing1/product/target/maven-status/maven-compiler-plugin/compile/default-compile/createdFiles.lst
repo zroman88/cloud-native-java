@@ -1,0 +1,4 @@
+com\mycompany\product\ProductSpringApp.class
+com\mycompany\product\Product.class
+com\mycompany\product\ProductClient.class
+com\mycompany\product\ProductService.class
